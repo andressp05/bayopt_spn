@@ -1,0 +1,53 @@
+Seed 1
+cols=[0.417022] - rows=[0.09233859] - threshold=[0.41919451] - num_instances=201 --> ERROR:1.0 --> Fallo de Programacion: SI
+cols=[0.72032449] - rows=[0.18626021] - threshold=[0.6852195] - num_instances=125 --> ERROR:1.0 --> Fallo de Programacion: SI
+cols=[0.00011437] - rows=[0.34556073] - threshold=[0.20445225] - num_instances=167 --> ERROR:1.0 --> Fallo de Programacion: SI
+cols=[0.30233257] - rows=[0.39676747] - threshold=[0.87811744] - num_instances=42 --> ERROR:1.0 --> Fallo de Programacion: SI
+cols=[0.14675589] - rows=[0.53881673] - threshold=[0.02738759] - num_instances=59 --> ERROR:1.0 --> Fallo de Programacion: SI
+Run_Optimization 
+cols=[0.94829917] - rows=[0.03758385] - threshold=[0.36179576] - num_instances=45 --> ERROR:1.0 --> Fallo de Programacion: SI
+cols=[0.40362279] - rows=[0.87675392] - threshold=[0.2055091] - num_instances=40 --> ERROR:1.0 --> Fallo de Programacion: SI
+FIN EJECUCION 
+Seed 1
+cols=[0.417022] - rows=[0.09233859] - threshold=[0.41919451] - num_instances=201 --> ERROR:1.0 --> Fallo de Programacion: SI
+cols=[0.72032449] - rows=[0.18626021] - threshold=[0.6852195] - num_instances=125 --> ERROR:1.0 --> Fallo de Programacion: SI
+cols=[0.00011437] - rows=[0.34556073] - threshold=[0.20445225] - num_instances=167 --> ERROR:1.0 --> Fallo de Programacion: SI
+cols=[0.30233257] - rows=[0.39676747] - threshold=[0.87811744] - num_instances=42 --> ERROR:1.0 --> Fallo de Programacion: SI
+cols=[0.14675589] - rows=[0.53881673] - threshold=[0.02738759] - num_instances=59 --> ERROR:1.0 --> Fallo de Programacion: SI
+Run_Optimization 
+cols=[0.94829917] - rows=[0.03758385] - threshold=[0.36179576] - num_instances=45 --> ERROR:1.0 --> Fallo de Programacion: SI
+cols=[0.40362279] - rows=[0.87675392] - threshold=[0.2055091] - num_instances=40 --> ERROR:1.0 --> Fallo de Programacion: SI
+FIN EJECUCION 
+Seed 2
+cols=[0.4359949] - rows=[0.33033482] - threshold=[0.62113383] - num_instances=235 --> ERROR:1.0 --> Fallo de Programacion: SI
+cols=[0.02592623] - rows=[0.20464863] - threshold=[0.52914209] - num_instances=256 --> ERROR:1.0 --> Fallo de Programacion: SI
+cols=[0.54966248] - rows=[0.61927097] - threshold=[0.13457995] - num_instances=148 --> ERROR:1.0 --> Fallo de Programacion: SI
+cols=[0.43532239] - rows=[0.29965467] - threshold=[0.51357812] - num_instances=253 --> ERROR:1.0 --> Fallo de Programacion: SI
+cols=[0.4203678] - rows=[0.26682728] - threshold=[0.18443987] - num_instances=23 --> ERROR:1.0 --> Fallo de Programacion: SI
+Run_Optimization 
+cols=[0.48192889] - rows=[0.23198834] - threshold=[0.3900214] - num_instances=258 --> ERROR:1.0 --> Fallo de Programacion: SI
+cols=[0.59705565] - rows=[0.34972787] - threshold=[0.91265211] - num_instances=55 --> ERROR:1.0 --> Fallo de Programacion: SI
+FIN EJECUCION 
+Seed 2
+cols=[0.4359949] - rows=[0.33033482] - threshold=[0.62113383] - num_instances=235 --> ERROR:1.0 --> Fallo de Programacion: SI
+cols=[0.02592623] - rows=[0.20464863] - threshold=[0.52914209] - num_instances=256 --> ERROR:1.0 --> Fallo de Programacion: SI
+cols=[0.54966248] - rows=[0.61927097] - threshold=[0.13457995] - num_instances=148 --> ERROR:1.0 --> Fallo de Programacion: SI
+cols=[0.43532239] - rows=[0.29965467] - threshold=[0.51357812] - num_instances=253 --> ERROR:1.0 --> Fallo de Programacion: SI
+cols=[0.4203678] - rows=[0.26682728] - threshold=[0.18443987] - num_instances=23 --> ERROR:1.0 --> Fallo de Programacion: SI
+Run_Optimization 
+cols=[0.48192889] - rows=[0.23198834] - threshold=[0.3900214] - num_instances=258 --> ERROR:1.0 --> Fallo de Programacion: SI
+cols=[0.59705565] - rows=[0.34972787] - threshold=[0.91265211] - num_instances=55 --> ERROR:1.0 --> Fallo de Programacion: SI
+FIN EJECUCION 
+Seed 2
+cols=[0.4359949] - rows=[0.33033482] - threshold=[0.62113383] - num_instances=235 --> ERROR:1.0 --> Fallo de Programacion: SI
+cols=[0.02592623] - rows=[0.20464863] - threshold=[0.52914209] - num_instances=256 --> ERROR:1.0 --> Fallo de Programacion: SI
+cols=[0.54966248] - rows=[0.61927097] - threshold=[0.13457995] - num_instances=148 --> ERROR:1.0 --> Fallo de Programacion: SI
+cols=[0.43532239] - rows=[0.29965467] - threshold=[0.51357812] - num_instances=253 --> ERROR:1.0 --> Fallo de Programacion: SI
+cols=[0.4203678] - rows=[0.26682728] - threshold=[0.18443987] - num_instances=23 --> ERROR:1.0 --> Fallo de Programacion: SI
+Run_Optimization 
+cols=[0.48192889] - rows=[0.23198834] - threshold=[0.3900214] - num_instances=258 --> ERROR:1.0 --> Fallo de Programacion: SI
+cols=[0.59705565] - rows=[0.34972787] - threshold=[0.91265211] - num_instances=55 --> ERROR:1.0 --> Fallo de Programacion: SI
+FIN EJECUCION 
+Seed 2
+Seed 2
+Seed 2

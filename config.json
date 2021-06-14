@@ -1,0 +1,42 @@
+{
+    "language"        : "PYTHON",
+    "main-file"       : "iris_spn.py",
+    "experiment-name" : "iris-spn",
+    "likelihood"      : "gaussian",
+    "resources": {
+        "maximum-iterations" :  50,
+        "max-run-time": "NA"
+    },
+    "space" : [
+        {   "name" : "cols",
+            "type" : "categorical",
+            "domain": "(0,1)", // 0 -> rdc; 1 -> poisson
+            "dimensionality": "1"
+        },
+        {
+            "name" : "rows",
+            "type" : "categorical",
+            "domain": "(0,3)", // 0 -> rdc; 1 -> kmeans; 2 -> tsne; 3 -> gmm
+            "dimensionality": "1"
+        },
+        {   "name" : "treshold",
+            "type" : "continuous",
+            "domain" : "(0,1)", // treshold of sifnificance
+            "dimensionality" : "1"
+        },
+        {   "name" : "num_instances",
+            "type" : "discrete",
+            "domain" : "(0,300)", // minimum number of instances to split
+            "dimensionality" : "1"
+        },
+        {   "name" : "smooth",
+            "type" : "discrete",
+            "domain" : "(0,300)", // smoothing factor
+            "dimensionality" : "1"
+        }
+    ],
+    "constraints": [],
+    "output":{
+        "verbosity": true
+    }
+}

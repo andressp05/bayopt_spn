@@ -1,0 +1,11 @@
+Seed 4
+0: cols=0 - rows=2 - threshold=0.5472322491757223 - num_instances=87 --> ERROR:0.2841225626740947 --> Fallo de Programacion: NO
+1: cols=0 - rows=2 - threshold=0.5975562052137366 - num_instances=252 --> ERROR:0.3247910863509749 --> Fallo de Programacion: NO
+2: cols=1 - rows=1 - threshold=0.006230255204589863 - num_instances=164 --> ERROR:0.3247910863509749 --> Fallo de Programacion: NO
+3: cols=0 - rows=0 - threshold=0.19768507460025309 - num_instances=52 --> ERROR:0.1481894150417827 --> Fallo de Programacion: NO
+4: cols=1 - rows=0 - threshold=0.16384224140469872 - num_instances=149 --> ERROR:0.3247910863509749 --> Fallo de Programacion: NO
+5: cols=1 - rows=2 - threshold=0.6125253393245583 - num_instances=56 --> ERROR:1.0 --> Fallo de Programacion: SI
+6: cols=0 - rows=2 - threshold=0.9566529677142359 - num_instances=136 --> ERROR:0.3598885793871866 --> Fallo de Programacion: NO
+7: cols=1 - rows=2 - threshold=0.039780361848369084 - num_instances=168 --> ERROR:0.3247910863509749 --> Fallo de Programacion: NO
+8: cols=1 - rows=2 - threshold=0.44134853091052606 - num_instances=288 --> ERROR:0.3247910863509749 --> Fallo de Programacion: NO
+9: cols=0 - rows=1 - threshold=0.16797218371840383 - num_instances=207 --> ERROR:0.3247910863509749 --> Fallo de Programacion: NO

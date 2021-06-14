@@ -1,0 +1,140 @@
+Execution 0
+BO error --> 0.039999999999999994 with hyperparams: cols = poisson, rows = rdc, threshold = 0.32726492767748494, num_instances = 300.
+RS error --> 0.039999999999999994 with hyperparams: cols = poisson, rows = rdc, threshold = 0.8125736215964352, num_instances = 285.
+Execution 1
+BO error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = rdc, threshold = 0.7332677199507512, num_instances = 300.
+RS error --> 0.033333333333333326 with hyperparams: cols = rdc, rows = kmeans, threshold = 0.796637588791153, num_instances = 36.
+Execution 2
+BO error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = gmm, threshold = 0.051311964944708466, num_instances = 300.
+RS error --> 0.039999999999999994 with hyperparams: cols = poisson, rows = kmeans, threshold = 0.9010286796626075, num_instances = 69.
+Execution 3
+BO error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = rdc, threshold = 0.9121502581790101, num_instances = 300.
+RS error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = kmeans, threshold = 0.3081820746705898, num_instances = 208.
+Execution 4
+BO error --> 0.039999999999999994 with hyperparams: cols = poisson, rows = gmm, threshold = 0.2792756409919557, num_instances = 300.
+RS error --> 0.033333333333333326 with hyperparams: cols = rdc, rows = kmeans, threshold = 0.7413218530617304, num_instances = 37.
+Execution 5
+BO error --> 0.039999999999999994 with hyperparams: cols = poisson, rows = rdc, threshold = 0.135544646219808, num_instances = 300.
+RS error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = kmeans, threshold = 0.18250918472849853, num_instances = 65.
+Execution 6
+BO error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = rdc, threshold = 1.0, num_instances = 0.
+RS error --> 0.039999999999999994 with hyperparams: cols = poisson, rows = gmm, threshold = 0.8190953240139056, num_instances = 67.
+Execution 7
+BO error --> 0.039999999999999994 with hyperparams: cols = poisson, rows = gmm, threshold = 0.4139244353707562, num_instances = 300.
+RS error --> 0.039999999999999994 with hyperparams: cols = poisson, rows = kmeans, threshold = 0.6643846621340181, num_instances = 276.
+Execution 8
+BO error --> 0.039999999999999994 with hyperparams: cols = poisson, rows = gmm, threshold = 0.16430550266443966, num_instances = 300.
+RS error --> 0.039999999999999994 with hyperparams: cols = poisson, rows = kmeans, threshold = 0.041257528870593974, num_instances = 102.
+Execution 9
+BO error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = rdc, threshold = 0.4015037585326343, num_instances = 300.
+RS error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = rdc, threshold = 0.0433197287976953, num_instances = 261.
+Execution 0
+BO error --> 0.046666666666666655 with hyperparams: cols = poisson, rows = rdc, threshold = 0.23416130447230632, num_instances = 88.
+RS error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = rdc, threshold = 0.018014823717907524, num_instances = 7.
+Execution 1
+BO error --> 0.046666666666666655 with hyperparams: cols = rdc, rows = rdc, threshold = 0.25757156652007784, num_instances = 156.
+RS error --> 0.046666666666666655 with hyperparams: cols = poisson, rows = gmm, threshold = 0.9824717632961872, num_instances = 228.
+Execution 2
+BO error --> 0.046666666666666655 with hyperparams: cols = poisson, rows = gmm, threshold = 0.34879735058283434, num_instances = 57.
+Execution 0
+
+Execution 0
+BO error --> 0.039999999999999994 with hyperparams: cols = poisson, rows = gmm, threshold = 0.40562794252346757, num_instances = 155.
+RS error --> 0.033333333333333326 with hyperparams: cols = rdc, rows = gmm, threshold = 0.4863163025653988, num_instances = 24.
+Execution 1
+BO error --> 0.039999999999999994 with hyperparams: cols = poisson, rows = rdc, threshold = 0.07565780731628713, num_instances = 117.
+RS error --> 0.039999999999999994 with hyperparams: cols = poisson, rows = gmm, threshold = 0.30746161802149774, num_instances = 156.
+Execution 2
+BO error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = rdc, threshold = 0.9213290366070482, num_instances = 121.
+RS error --> 0.039999999999999994 with hyperparams: cols = poisson, rows = gmm, threshold = 0.029091546895331888, num_instances = 226.
+Execution 3
+BO error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = kmeans, threshold = 0.734364868767417, num_instances = 181.
+RS error --> 0.039999999999999994 with hyperparams: cols = poisson, rows = rdc, threshold = 0.7103641825870037, num_instances = 252.
+Execution 4
+BO error --> 0.039999999999999994 with hyperparams: cols = poisson, rows = gmm, threshold = 0.7016929888002631, num_instances = 75.
+RS error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = rdc, threshold = 0.39296549711855633, num_instances = 121.
+Execution 5
+BO error --> 0.039999999999999994 with hyperparams: cols = poisson, rows = gmm, threshold = 0.6357097807112485, num_instances = 59.
+RS error --> 0.039999999999999994 with hyperparams: cols = poisson, rows = kmeans, threshold = 0.9259584983822639, num_instances = 211.
+Execution 6
+BO error --> 0.039999999999999994 with hyperparams: cols = poisson, rows = kmeans, threshold = 0.18504317374619306, num_instances = 169.
+RS error --> 0.039999999999999994 with hyperparams: cols = poisson, rows = kmeans, threshold = 0.2107489647098486, num_instances = 185.
+Execution 7
+BO error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = kmeans, threshold = 0.7891802676083473, num_instances = 115.
+RS error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = kmeans, threshold = 0.3237392178599485, num_instances = 37.
+Execution 8
+BO error --> 0.039999999999999994 with hyperparams: cols = poisson, rows = kmeans, threshold = 0.9290763068912135, num_instances = 185.
+RS error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = rdc, threshold = 0.9596832331286229, num_instances = 53.
+Execution 9
+BO error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = kmeans, threshold = 0.029019051014709474, num_instances = 82.
+RS error --> 0.039999999999999994 with hyperparams: cols = poisson, rows = kmeans, threshold = 0.043596559430597814, num_instances = 142.
+Execution 0
+Execution 0
+BO error --> 0.046666666666666655 with hyperparams: cols = rdc, rows = gmm, threshold = 0.5679677533963922, num_instances = 148.
+RS error --> 0.046666666666666655 with hyperparams: cols = poisson, rows = kmeans, threshold = 0.527796075222098, num_instances = 66.
+Execution 1
+BO error --> 0.046666666666666655 with hyperparams: cols = poisson, rows = gmm, threshold = 0.8288202524138696, num_instances = 81.
+RS error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = rdc, threshold = 0.9101490989127834, num_instances = 39.
+Execution 2
+BO error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = rdc, threshold = 0.0, num_instances = 38.
+RS error --> 0.033333333333333326 with hyperparams: cols = rdc, rows = kmeans, threshold = 0.08707253680797045, num_instances = 39.
+Execution 3
+BO error --> 0.046666666666666655 with hyperparams: cols = rdc, rows = rdc, threshold = 0.08713362739245445, num_instances = 242.
+RS error --> 0.033333333333333326 with hyperparams: cols = rdc, rows = rdc, threshold = 0.0024406010833906144, num_instances = 39.
+Execution 4
+BO error --> 0.046666666666666655 with hyperparams: cols = poisson, rows = rdc, threshold = 0.49629676861219274, num_instances = 281.
+RS error --> 0.033333333333333326 with hyperparams: cols = rdc, rows = rdc, threshold = 0.8274487715564075, num_instances = 8.
+Execution 5
+BO error --> 0.046666666666666655 with hyperparams: cols = poisson, rows = kmeans, threshold = 0.21667857235202315, num_instances = 44.
+RS error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = rdc, threshold = 0.9340471856265627, num_instances = 11.
+Execution 6
+BO error --> 0.046666666666666655 with hyperparams: cols = poisson, rows = kmeans, threshold = 0.4087516930263344, num_instances = 185.
+RS error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = gmm, threshold = 0.7628224947486197, num_instances = 8.
+Execution 7
+BO error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = rdc, threshold = 0.37209803691589816, num_instances = 30.
+RS error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = gmm, threshold = 0.20371656369519076, num_instances = 35.
+Execution 8
+BO error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = gmm, threshold = 0.9342379557480894, num_instances = 16.
+RS error --> 0.033333333333333326 with hyperparams: cols = rdc, rows = gmm, threshold = 0.7514496569398754, num_instances = 21.
+Execution 9
+BO error --> 0.046666666666666655 with hyperparams: cols = rdc, rows = kmeans, threshold = 0.47628666261341024, num_instances = 293.
+RS error --> 0.033333333333333326 with hyperparams: cols = rdc, rows = rdc, threshold = 0.8319835368153241, num_instances = 18.
+Execution 0
+0
+RS error --> 0.033333333333333326 with hyperparams: cols = rdc, rows = rdc, threshold = 0.0329464446653579, num_instances = 13.
+Execution 1
+1
+RS error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = rdc, threshold = 0.0035751938367969416, num_instances = 32.
+Execution 2
+2
+Execution 0
+Execution 0
+iris_bo.py
+BO error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = kmeans, threshold = 0.5932172119563489, num_instances = 229.
+RS error --> 0.033333333333333326 with hyperparams: cols = rdc, rows = rdc, threshold = 0.5098578847301704, num_instances = 24.
+Execution 1
+iris_bo.py
+BO error --> 0.039999999999999994 with hyperparams: cols = poisson, rows = kmeans, threshold = 0.25879525822346117, num_instances = 239.
+RS error --> 0.033333333333333326 with hyperparams: cols = rdc, rows = kmeans, threshold = 0.10698661711660717, num_instances = 25.
+Execution 2
+Execution 0
+iris_bo.py
+BO error --> 0.046666666666666655 with hyperparams: cols = poisson, rows = gmm, threshold = 0.28731520966401525, num_instances = 114.
+RS error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = kmeans, threshold = 0.5219901252485114, num_instances = 30.
+Execution 1
+Execution 0
+
+Execution 0
+
+Execution 0
+Execution 0
+
+Execution 0
+
+Execution 0
+BO error --> 0.046666666666666655 with hyperparams: cols = poisson, rows = gmm, threshold = 0.5680445610939323, num_instances = 249.
+RS error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = kmeans, threshold = 0.2639607806339994, num_instances = 12.
+Execution 1
+BO error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = gmm, threshold = 0.20550910443167592, num_instances = 40.
+RS error --> 0.039999999999999994 with hyperparams: cols = rdc, rows = kmeans, threshold = 0.05600213920010699, num_instances = 14.
+Execution 2
