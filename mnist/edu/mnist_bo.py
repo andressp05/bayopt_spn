@@ -22,6 +22,7 @@ import GPyOpt
 from GPyOpt.methods import BayesianOptimization
 
 # TO-DO si el tamaño no es divisible por k
+#EDU TODO: TEST THIS.
 def divide_k_folds(k, x, y, i):  
   # Calculate sizes
   total_size = len(x)
@@ -52,6 +53,7 @@ def divide_k_folds(k, x, y, i):
 
   return x_train, x_test, y_train, y_test
 
+#EDU TODO: TEST THIS.
 def cols_value_to_cols(cols_value):
   if cols_value < (1.0/2.0):
     cols = 'rdc'
@@ -59,6 +61,7 @@ def cols_value_to_cols(cols_value):
     cols = 'poisson'
   return cols
 
+#EDU TODO: TEST THIS.
 def rows_value_to_rows(rows_value):
   if rows_value < (1.0/3.0):
     rows = 'rdc'
@@ -69,6 +72,7 @@ def rows_value_to_rows(rows_value):
   return rows
 
 
+#EDU TODO: TEST THIS.
 def optimize_mnist_bo_function(params):
   # Carga Dataset MNIST
   mnist_data, mnist_target = load_digits(return_X_y=True)
@@ -88,7 +92,7 @@ def optimize_mnist_bo_function(params):
   f.write("cols=" + str(cols_value) + ' - rows=' + str(rows_value) + ' - threshold=' + str(threshold) + ' - num_instances=' + str(int(num_instances)))
 
   # K-Fold Cross Validation Params
-  k = 5
+  k = 2
   error = 0
 
   for i in range(k):
@@ -128,7 +132,7 @@ def optimize_mnist_bo_function(params):
       #print(error)
     except:
       error += 1
-  error = error/k
+  error = error/float(k)
 
   f.write(' --> ERROR:' + str(error))
 
@@ -149,19 +153,22 @@ def main():
   f.write('Seed ' + sys.argv[1] + '\n')
   f.close()
   # Hyperparams to optimize
+  #EDU: Make it easier. Force it to work. 
   mixed_domain =[{'name': 'cols', 'type': 'continuous', 'domain': (0,1),'dimensionality': 1}, # 0 -> rdc; 1 -> poisson
                {'name': 'rows', 'type': 'continuous', 'domain': (0,1),'dimensionality': 1}, # 0 -> rdc; 1 -> kmeans; 2 -> tsne; 3 -> gmm
                {'name': 'threshold', 'type': 'continuous', 'domain': (0,1),'dimensionality': 1}, # threshold of sifnificance
                {'name': 'num_instances', 'type': 'continuous', 'domain': (0,300), 'dimensionality' : 1}] # minimum number of instances to split
 
   # Bayesian Optimization Proccess
+  #EDU: Try another acquisition function and another kernel.
   bo_mnist = BayesianOptimization(f=optimize_mnist_bo_function,                     # Objective function       
                       domain=mixed_domain,          # Box-constraints of the problem
                       acquisition_type='EI',        # Expected Improvement
-                      exact_feval = True)           # True evaluations, no sample noise
+                      exact_feval = True)           # True evaluations, no sample noise # Put this to FALSE
   
   # Number of Iterations for the Optimization
-  max_iter = 10
+  # EDU: Increase the number of iters to 20. Should be enough for simple dimensional spaces.
+  max_iter = 20
   try:
     #print("Entro Aquí")
     f = open("mnist_bo_hyperparams.txt", "a")

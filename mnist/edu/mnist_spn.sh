@@ -1,5 +1,5 @@
 #!/bin/bash
-num_executions=10
+num_executions=2
 echo "START"
 echo "--- Mnist test with a total of $num_executions executions"
 for (( counter=0; counter<num_executions; counter++ ))

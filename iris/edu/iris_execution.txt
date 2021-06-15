@@ -1,0 +1,49 @@
+Execution 0
+BO error --> 0.05333333333333332 with hyperparams: cols = poisson, rows = gmm, threshold = 0.5680445610939323, num_instances = 249.
+
+Execution 1
+Execution 0
+BO error --> 0.046666666666666655 with hyperparams: cols = poisson, rows = gmm, threshold = 0.5680445610939323, num_instances = 249.
+
+Execution 1
+Execution 0
+
+
+Execution 1
+
+
+Execution 0
+
+
+Execution 1
+
+
+Execution 0
+Execution 0
+
+
+Execution 1
+
+
+Execution 0
+BO error --> 0.06 with hyperparams: threshold = 0.5488135039273248.
+
+Execution 1
+Execution 0
+
+
+Execution 1
+
+
+Execution 0
+
+
+Execution 1
+
+
+Execution 0
+BO error --> 0.04666666666666669 with hyperparams: threshold = 0.5488135039273248.
+RS error --> 0.04666666666666669 with threshold = 0.5488135039273248.
+Execution 1
+BO error --> 0.04666666666666669 with hyperparams: threshold = 0.417022004702574.
+RS error --> 0.04666666666666669 with threshold = 0.417022004702574.
