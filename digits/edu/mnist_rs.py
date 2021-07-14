@@ -8,14 +8,18 @@ import pdb
 import sys
 import math
 from sklearn.metrics import accuracy_score
+from sklearn.datasets import load_digits
 import numpy as np
-import pandas as pd
 
 # Imports SPN
 from spn.algorithms.LearningWrappers import learn_parametric, learn_classifier
-from spn.structure.leaves.parametric.Parametric import Categorical, Gaussian
+from spn.structure.leaves.parametric.Parametric import Categorical, MultivariateGaussian, Gaussian
 from spn.structure.Base import Context
 from spn.algorithms.MPE import mpe
+
+# Imports Bayessian Optimization
+import GPyOpt
+from GPyOpt.methods import BayesianOptimization
 
 # TO-DO si el tamaño no es divisible por k
 def divide_k_folds(k, x, y, i):  
@@ -65,29 +69,27 @@ def rows_value_to_rows(rows_value):
   return rows
 
 
-#def optimize_iris_rs_function(cols_value, rows_value, threshold, num_instances):
-def optimize_iris_rs_function(threshold):
-  # Carga Dataset iris
-  df_data = pd.read_pickle("iris_data.pkl")
-  df_target = pd.read_pickle("iris_target.pkl")
-  iris_data = df_data.to_numpy()
-  iris_target = df_target.to_numpy().reshape(-1)
+def optimize_mnist_rs_function(cols_value, rows_value, threshold, num_instances):
+  # Carga Dataset MNIST
+  mnist = load_digits()
+  mnist_data = mnist.data[:1795]
+  mnist_target = mnist.target[:1795]
 
   # Hyperparams
-  #cols = cols_value_to_cols(cols_value)
-  #rows = rows_value_to_rows(rows_value)
+  cols = cols_value_to_cols(cols_value)
+  rows = rows_value_to_rows(rows_value)
   threshold = threshold
-  #num_instances = num_instances
+  num_instances = num_instances
   
 
   # K-Fold Cross Validation Params
-  k = 2
+  k = 5
   error = 0
 
   for i in range(k):
     #print("K-FOLD" + str(i))
     # Divide K-Fold Cross Validation
-    x_train, x_test, y_train, y_test = divide_k_folds(k, iris_data, iris_target, i)
+    x_train, x_test, y_train, y_test = divide_k_folds(k, mnist_data, mnist_target, i)
     #X_train, X_test, y_train, y_test = train_test_split(iris.data, iris.target, test_size=0.4, random_state=0)
 
     # Prepare Train Data
@@ -95,12 +97,15 @@ def optimize_iris_rs_function(threshold):
     train_data = np.hstack((x_train, y_train_reshape))
     
     # Learn SPN
-    #hyperparams = {"cols": cols, "rows": rows, "threshold": threshold, "min_instances_slice": num_instances, "multivariate_leaf": False}
-    hyperparams = {"threshold": threshold}
+    hyperparams = {"cols": cols, "rows": rows, "threshold": threshold, "min_instances_slice": num_instances, "multivariate_leaf": False}
     try:
       spn_classification = learn_classifier(train_data,
-                          Context(parametric_types=[Gaussian, Gaussian, Gaussian, Gaussian, Categorical]).add_domains(train_data),
-                          learn_parametric, 4, **hyperparams)
+                          Context(parametric_types=[Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian
+                          , Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian,
+                          Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian
+                          , Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian
+                          , Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian]).add_domains(train_data),
+                          learn_parametric, 64, **hyperparams)
 
       # Prediction with MPE
       y_predict = np.empty(len(x_test))
@@ -110,7 +115,7 @@ def optimize_iris_rs_function(threshold):
       predict_data = mpe(spn_classification, predict_data)
 
       # Calculate Error
-      y_predict = np.hsplit(predict_data,[4])
+      y_predict = np.hsplit(predict_data,[64])
       y_predict = y_predict[1]
       #print(y_test) 
       #print(y_predict.reshape(1,-1))
@@ -118,36 +123,30 @@ def optimize_iris_rs_function(threshold):
     except:
       error += 1
     #print(error)
-
-  error = error/float(k)
+  error = error/k
   #print(error)
   #print("ITERACION TERMINADA")
 
-  #return error,cols,rows,threshold,num_instances
-  return error,threshold
+  return error,cols,rows,threshold,num_instances
 
 def main():
   seed = np.random.seed(int(sys.argv[1]))
   
-  f = open("iris_rs_hyperparams.txt", "w")
+  f = open("mnist_rs_hyperparams.txt", "w")
   f.write('Seed ' + sys.argv[1] + '\n')
   
-  num_iterations = 100
+  num_iterations = 10
   error_min = 100
 
   for i in range(num_iterations):
-    
+    #print("Iteracion" + str(i) + '\n')
     # Hyperparams to optimize
-    #cols_value = np.random.randint(0,high=2)
-    #rows_value = np.random.randint(0,high=3)
+    cols_value = np.random.randint(0,high=2)
+    rows_value = np.random.randint(0,high=3)
     threshold = np.random.rand()
-    #num_instances = np.random.randint(0,high=300)
-    #f.write(str(i) + ": cols=" + str(cols_value) + ' - rows=' + str(rows_value) + ' - threshold=' + str(threshold) + ' - num_instances=' + str(num_instances))
-    f.write(str(i) + ': threshold=' + str(threshold))
-
-
-    #error,cols,rows,threshold,num_instances = optimize_iris_rs_function(cols_value,rows_value, threshold, num_instances)
-    error,threshold = optimize_iris_rs_function(threshold)
+    num_instances = np.random.randint(0,high=300)
+    f.write(str(i) + ": cols=" + str(cols_value) + ' - rows=' + str(rows_value) + ' - threshold=' + str(threshold) + ' - num_instances=' + str(num_instances))
+    error,cols,rows,threshold,num_instances = optimize_mnist_rs_function(cols_value,rows_value, threshold, num_instances)
 
     f.write(' --> ERROR:' + str(error))
 
@@ -158,18 +157,17 @@ def main():
 
     if error < error_min:
       error_min = error
-      #cols_min = cols
-      #rows_min = rows
+      cols_min = cols
+      rows_min = rows
       threshold_min = threshold
-      #num_instances_min = num_instances
+      num_instances_min = num_instances
     
 
   #print("Value of (cols,rows,threshold,num_instances) that minimises the objective: ("+ cols_min + ", " + rows_min + ", " + str(threshold_min) + ", "+ str(num_instances_min)+ ")" ) 
   #print("Minimum error of the objective: ", error_min)
   f.close()
-  #result = "RS error --> " + str(error_min) + " with hyperparams: cols = " + cols_min + ", rows = " + rows_min + ", threshold = " + str(threshold_min) + ", num_instances = " + str(int(num_instances_min)) + "."
-  result = "RS error --> " + str(error_min) + " with threshold = " + str(threshold_min) + "."
-  print(result)
+  result = "RS error --> " + str(error_min) + " with hyperparams: cols = " + cols_min + ", rows = " + rows_min + ", threshold = " + str(threshold_min) + ", num_instances = " + str(int(num_instances_min)) + "."
+  #print(result)
   return result
   
 if __name__ == "__main__":

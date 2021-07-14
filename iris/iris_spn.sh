@@ -1,5 +1,5 @@
 #!/bin/bash
-num_executions=10
+num_executions=3
 echo "START"
 echo "--- Iris test with a total of $num_executions executions"
 python3 iris_dataset.py

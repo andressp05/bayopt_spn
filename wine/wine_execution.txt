@@ -1,0 +1,9 @@
+Execution 0
+BO error --> 0.03370786516853935 with hyperparams: Threshold = 0.1363281472900566, Min_instances_slice = 100.0, Min_features_slice = 3.0, Rows = rdc.
+RS error --> 0.02247191011235955 with hyperparams: Threshold = 0.16207050389660704, Min_instances_slice = 5, Min_features_slice = 3, Rows = rdc.
+Execution 1
+BO error --> 0.03370786516853935 with hyperparams: Threshold = 0.33487301840174, Min_instances_slice = 100.0, Min_features_slice = 3.0, Rows = rdc.
+RS error --> 0.02808988764044945 with hyperparams: Threshold = 0.208511002351287, Min_instances_slice = 12, Min_features_slice = 1, Rows = kmeans.
+Execution 2
+BO error --> 0.03370786516853935 with hyperparams: Threshold = 0.2425879547999325, Min_instances_slice = 100.0, Min_features_slice = 1.0, Rows = gmm.
+RS error --> 0.016853932584269704 with hyperparams: Threshold = 0.49692600571063644, Min_instances_slice = 22, Min_features_slice = 1, Rows = kmeans.

@@ -106,3 +106,10 @@ cols=[0.49354172] - rows=[0.98923673] - threshold=[0.32929414] - num_instances=1
 cols=[0.24375775] - rows=[0.36156508] - threshold=[0.42557595] - num_instances=0 --> ERROR:100.0 --> Fallo de Programacion: SI
 cols=[1.] - rows=[0.] - threshold=[1.] - num_instances=253 --> ERROR:57.629 --> Fallo de Programacion: NO
 FIN EJECUCION 
+Seed 1
+cols=[0.417022] - rows=[0.09233859] - threshold=[0.41919451] - num_instances=201 --> ERROR:57.629 --> Fallo de Programacion: NO
+cols=[0.72032449] - rows=[0.18626021] - threshold=[0.6852195] - num_instances=125 --> ERROR:100.0 --> Fallo de Programacion: SI
+cols=[0.00011437] - rows=[0.34556073] - threshold=[0.20445225] - num_instances=167 --> ERROR:100.0 --> Fallo de Programacion: SI
+cols=[0.30233257] - rows=[0.39676747] - threshold=[0.87811744] - num_instances=42 --> ERROR:100.0 --> Fallo de Programacion: SI
+cols=[0.14675589] - rows=[0.53881673] - threshold=[0.02738759] - num_instances=59 --> ERROR:100.0 --> Fallo de Programacion: SI
+Run_Optimization 

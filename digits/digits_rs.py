@@ -18,6 +18,8 @@ from spn.structure.leaves.parametric.Parametric import Categorical, Gaussian
 from spn.structure.Base import Context
 from spn.algorithms.MPE import mpe
 
+# Imports Bayessian Optimization
+import GPyOpt
 
 def rows_value_to_rows(rows_value):
   if rows_value == 0:
@@ -29,31 +31,30 @@ def rows_value_to_rows(rows_value):
   return rows
 
 
-def optimize_iris_rs_function(threshold, min_instances_slice, min_features_slice, rows_value):
-  # Carga Dataset iris
-  df_data = pd.read_pickle("iris_data.pkl")
-  df_target = pd.read_pickle("iris_target.pkl")
-  iris_data = df_data.to_numpy()
-  iris_target = df_target.to_numpy().reshape(-1)
+def optimize_digits_rs_function(threshold, min_instances_slice, min_features_slice, rows_value):
+  # Carga Dataset DIGITS
+  df_data = pd.read_pickle("digits_data.pkl")
+  df_target = pd.read_pickle("digits_target.pkl")
+  digits_data = df_data.to_numpy()
+  digits_target = df_target.to_numpy().reshape(-1)
 
   # Hyperparams
   threshold = threshold
   min_instances_slice = min_instances_slice
   min_features_slice = min_features_slice
   rows = rows_value_to_rows(rows_value)
-  
 
   # K-Fold Cross Validation Params
   k = 2
   error = 0.0
-  label = 4
+  label = 64
 
   kf = KFold(n_splits=2)
-  for train_index, test_index in kf.split(iris_data):
+  for train_index, test_index in kf.split(digits_data):
     #print("K-FOLD" + str(i))
     # Divide K-Fold Cross Validation
-    x_train, x_test = iris_data[train_index], iris_data[test_index]
-    y_train, y_test = iris_target[train_index], iris_target[test_index]
+    x_train, x_test = digits_data[train_index], digits_data[test_index]
+    y_train, y_test = digits_target[train_index], digits_target[test_index]
 
     # Prepare Train Data
     y_train_reshape = y_train.reshape(-1,1)
@@ -63,7 +64,11 @@ def optimize_iris_rs_function(threshold, min_instances_slice, min_features_slice
     hyperparams = {"threshold": threshold, "min_instances_slice": min_instances_slice, "min_features_slice": min_features_slice, "rows": rows}
     try:
       spn_classification = learn_classifier(train_data,
-                          Context(parametric_types=[Gaussian, Gaussian, Gaussian, Gaussian, Categorical]).add_domains(train_data),
+                          Context(parametric_types=[Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian
+                          , Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian,
+                          Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian
+                          , Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian
+                          , Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian]).add_domains(train_data),
                           learn_parametric, label, **hyperparams)
 
       # Prediction with MPE
@@ -74,14 +79,13 @@ def optimize_iris_rs_function(threshold, min_instances_slice, min_features_slice
       predict_data = mpe(spn_classification, predict_data)
 
       # Calculate Error
-      y_predict = predict_data[:,4]
+      y_predict = predict_data[:,64]
       #print(y_test) 
       #print(y_predict.reshape(1,-1))
       error += (1.0-accuracy_score(y_test, y_predict))
     except:
       error += 1.0
     #print(error)
-
   error = error/float(k)
   #print(error)
   #print("ITERACION TERMINADA")
@@ -91,22 +95,22 @@ def optimize_iris_rs_function(threshold, min_instances_slice, min_features_slice
 def main():
   seed = np.random.seed(int(sys.argv[1]))
   
-  f = open("iris_rs_hyperparams.txt", "w")
+  f = open("digits_rs_hyperparams.txt", "w")
   f.write('Seed ' + sys.argv[1] + '\n')
   
   num_iterations = 30
   error_min = 100
 
   for i in range(num_iterations):
-    
+    #print("Iteracion" + str(i) + '\n')
     # Hyperparams to optimize
     threshold = np.random.rand()/2.0
     min_instances_slice = np.random.randint(0,high=101)
     min_features_slice = np.random.randint(1, high=4)
     rows_value = np.random.randint(0,high=3)
     f.write(str(i) + ": threshold=" + str(threshold) + " - min_instances_slice=" + str(min_instances_slice) + " - min_features_slice=" + str(min_features_slice) + " - rows=" + str(rows_value))
-
-    error,threshold,min_instances_slice,min_features_slice,rows = optimize_iris_rs_function(threshold, min_instances_slice, min_features_slice, rows_value)
+  
+    error,threshold,min_instances_slice,min_features_slice,rows = optimize_digits_rs_function(threshold, min_instances_slice, min_features_slice, rows_value)
 
     f.write(' --> ERROR:' + str(error))
 

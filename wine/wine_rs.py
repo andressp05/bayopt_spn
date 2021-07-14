@@ -29,12 +29,12 @@ def rows_value_to_rows(rows_value):
   return rows
 
 
-def optimize_iris_rs_function(threshold, min_instances_slice, min_features_slice, rows_value):
-  # Carga Dataset iris
-  df_data = pd.read_pickle("iris_data.pkl")
-  df_target = pd.read_pickle("iris_target.pkl")
-  iris_data = df_data.to_numpy()
-  iris_target = df_target.to_numpy().reshape(-1)
+def optimize_wine_rs_function(threshold, min_instances_slice, min_features_slice, rows_value):
+  # Carga Dataset wine
+  df_data = pd.read_pickle("wine_data.pkl")
+  df_target = pd.read_pickle("wine_target.pkl")
+  wine_data = df_data.to_numpy()
+  wine_target = df_target.to_numpy().reshape(-1)
 
   # Hyperparams
   threshold = threshold
@@ -46,14 +46,14 @@ def optimize_iris_rs_function(threshold, min_instances_slice, min_features_slice
   # K-Fold Cross Validation Params
   k = 2
   error = 0.0
-  label = 4
+  label = 13
 
   kf = KFold(n_splits=2)
-  for train_index, test_index in kf.split(iris_data):
+  for train_index, test_index in kf.split(wine_data):
     #print("K-FOLD" + str(i))
     # Divide K-Fold Cross Validation
-    x_train, x_test = iris_data[train_index], iris_data[test_index]
-    y_train, y_test = iris_target[train_index], iris_target[test_index]
+    x_train, x_test = wine_data[train_index], wine_data[test_index]
+    y_train, y_test = wine_target[train_index], wine_target[test_index]
 
     # Prepare Train Data
     y_train_reshape = y_train.reshape(-1,1)
@@ -63,7 +63,7 @@ def optimize_iris_rs_function(threshold, min_instances_slice, min_features_slice
     hyperparams = {"threshold": threshold, "min_instances_slice": min_instances_slice, "min_features_slice": min_features_slice, "rows": rows}
     try:
       spn_classification = learn_classifier(train_data,
-                          Context(parametric_types=[Gaussian, Gaussian, Gaussian, Gaussian, Categorical]).add_domains(train_data),
+                          Context(parametric_types=[Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Gaussian, Categorical]).add_domains(train_data),
                           learn_parametric, label, **hyperparams)
 
       # Prediction with MPE
@@ -74,7 +74,7 @@ def optimize_iris_rs_function(threshold, min_instances_slice, min_features_slice
       predict_data = mpe(spn_classification, predict_data)
 
       # Calculate Error
-      y_predict = predict_data[:,4]
+      y_predict = predict_data[:,13]
       #print(y_test) 
       #print(y_predict.reshape(1,-1))
       error += (1.0-accuracy_score(y_test, y_predict))
@@ -91,7 +91,7 @@ def optimize_iris_rs_function(threshold, min_instances_slice, min_features_slice
 def main():
   seed = np.random.seed(int(sys.argv[1]))
   
-  f = open("iris_rs_hyperparams.txt", "w")
+  f = open("wine_rs_hyperparams.txt", "w")
   f.write('Seed ' + sys.argv[1] + '\n')
   
   num_iterations = 30
@@ -106,7 +106,7 @@ def main():
     rows_value = np.random.randint(0,high=3)
     f.write(str(i) + ": threshold=" + str(threshold) + " - min_instances_slice=" + str(min_instances_slice) + " - min_features_slice=" + str(min_features_slice) + " - rows=" + str(rows_value))
 
-    error,threshold,min_instances_slice,min_features_slice,rows = optimize_iris_rs_function(threshold, min_instances_slice, min_features_slice, rows_value)
+    error,threshold,min_instances_slice,min_features_slice,rows = optimize_wine_rs_function(threshold, min_instances_slice, min_features_slice, rows_value)
 
     f.write(' --> ERROR:' + str(error))
 
